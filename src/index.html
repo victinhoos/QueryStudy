@@ -4,31 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QueryStudy</title>
-    <link rel="stylesheet" href=".Assets/STYLE/index.css">
+    
+    <link rel="stylesheet" href=".Assets/style/index.css">
+    <link rel="stylesheet" href=".Assets/style/index.css">
+    <link rel="shortcut icon" href=".Assets\img\favicon.ico" type="image/x-icon">
+
+    <script src=".Assets/js/fonteBotao.js" defer></script> 
+    <script src=".Assets/js/bancoBotao.js" defer></script>
+    <script src=".Assets/js/moverBotao.js" defer></script>
+    <script src=".Assets/js/configBotao.js" defer></script>
 </head>
 <body>
+    
     <header>
         <div class="container-header-esquerdo">
             <div class="logo">
-                <img src=".Assets/IMG/logo.png" alt="Logo" style="max-height: 50px; width: auto;">
+                <img src=".Assets/IMG/logo.png" alt="Logo">
             </div>
-            
+                
             <div class="banco">
-                <button class="btn-header ativo" data-banco="MySQL">MySQL</button>
-                <button class="btn-header ativo" data-banco="MongoDB">MongoDB</button>
-                <button class="btn-header ativo" data-banco="PostgreSQL">PostgreSQL</button>
+                <button class="btn-header ativo" data-id="1">MySQL</button>
+                <button class="btn-header"  data-id="2">MongoDB</button>
+                <button class="btn-header"  data-id="3">PostgreSQL</button>
             </div>
         </div>
 
-        <div class="container-header-direito">
-            <button>DarkMod</button>
-            <button>-A</button>
-            <button>A+</button>
-            <button>Configuração</button>
+        <div class="container-header-direito" id="container-direito">
+            <button class="btn-oculto btn-header-direito" id="btn-tema" onclick="alternarTema()">
+                <img src=".Assets/ICON/sol.svg" alt="Sol">
+            </button>
+            
+            <button class="btn-oculto btn-header-direito" onclick="mudarTamanhoFonte('diminuir')">-A</button>
+            <button class="btn-oculto btn-header-direito" onclick="mudarTamanhoFonte('normal')">A</button>
+            <button class="btn-oculto btn-header-direito" onclick="mudarTamanhoFonte('aumentar')">A+</button>
+            
+            <button id="btn-config" class="btn-header-direito">
+                <img src=".Assets/ICON/definicoes.svg" alt="Config">
+            </button>
         </div>
     </header>
-    
+
     <main>
+        <section class="pergunta">
+            <div class="persona">
+                <img src=".Assets/img/personas/undraw_deep-thinker-avatar_6xg6.svg" alt="Avatar">
+            </div>
+            <div class="texto">
+                <h1>[MYSQL] Como que eu faço consultar uma tabela?</h1>
+            </div>
+        </section>
+
+        <section class="resposta" id="resposta">
+            </section>
+
+        <section class="alternativa" id="alternativa">
+            <button class="btn-viajante" onclick="moverBotao(this)">SELECT</button>
+            <button class="btn-viajante" onclick="moverBotao(this)">FROM</button>
+            <button class="btn-viajante" onclick="moverBotao(this)">NOME_TABELA</button>
+            <button class="btn-viajante" onclick="moverBotao(this)">*</button>
+        </section>
     </main>
+
+    <footer>
+        <p>Desenvolvido por Victor Elias</p>
+    </footer>
 </body>
 </html>
