@@ -58,3 +58,8 @@ QUERYSTUDY/
 ├── docker-compose.yml        # Orquestrador dos containers
 ├── dockerfile                # Receita da imagem Docker
 └── README.md                 # Documentação
+```
+<div align="center">
+        <img src="https://github.com/user-attachments/assets/c3140c4f-db0a-41f5-944a-88a66ed6f234" width="250" height="150">
+        <p>Agradeço pela leitura e pela atenção dedicada.</p>
+</div>
