@@ -3,17 +3,23 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: PHP_QueryStudy
+    container_name: PHP-SERVER-QUERYSTUDY
     ports:
-      - "${APP_PORT}:80"  
+      - "${APP_PORT}:80" 
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html  # <--- A MUDANÇA ESTÁ AQUI (O ponto significa "pasta atual")
     depends_on:
       - db
+    environment:
+       DB_HOST: db
+       DB_NAME: ${DB_NAME}
+       DB_USER: root
+       DB_PASSWORD: ${DB_PASSWORD}
 
   db:
     image: mysql:8.0
     container_name: mysql_db
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}

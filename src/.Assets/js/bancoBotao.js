@@ -10,7 +10,7 @@ botoesBanco.forEach(botao => {
 
             if (totalAtivos === 1) {
                 console.log(
-                    "Ação bloqueada: Pelo menos um item deve permanecer selecionado."
+                    alert("Pelo menos 1 ativado.")
                 );
                 return;
             }
